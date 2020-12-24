@@ -10,7 +10,9 @@ const View = () => {
             <ul className="list-group">
             {ryouris.map((e, i) => {
                 return <Ryouri key={i} name={e.name} category={e.category} tags={e.tags}
-                    kcal={e.kcal} jikan={e.jikan} zairyou={e.zairyou} tsukurikata={e.tsukurikata} />
+                    kcal={e.kcal} jikan={e.jikan} zairyou={e.zairyou} tsukurikata={e.tsukurikata}
+                    user={e.user.name}
+                />
             })}
             </ul>
         </>

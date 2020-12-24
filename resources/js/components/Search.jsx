@@ -46,6 +46,9 @@ const Search = () => {
                     case 6:
                         resp = await fetch('/api/ryouritsukurikata?tsukurikata=' + word);
                         break;
+                    case 7:
+                        resp = await fetch('/api/ryouriusername?username=' + word);
+                        break;
                     default:
                         resp = await fetch('/api/ryouris');
                         break;
@@ -71,41 +74,54 @@ const Search = () => {
                 }} />
                 料理名
             </label>
+            <span className="mr-1"></span>
             <label>
                 <input type="radio" name="option" value="1" onChange={(ev) => {
                     setOption(parseInt(ev.currentTarget.value));
                 }} />
                 カテゴリー
             </label>
+            <span className="mr-1"></span>
             <label>
                 <input type="radio" name="option" value="2" onChange={(ev) => {
                     setOption(parseInt(ev.currentTarget.value));
                 }} />
                 タグ
             </label>
+            <span className="mr-1"></span>
             <label>
                 <input type="radio" name="option" value="3" onChange={(ev) => {
                     setOption(parseInt(ev.currentTarget.value));
                 }} />
                 カロリー
             </label>
+            <span className="mr-1"></span>
             <label>
                 <input type="radio" name="option" value="4" onChange={(ev) => {
                     setOption(parseInt(ev.currentTarget.value));
                 }} />
                 時間
             </label>
+            <span className="mr-1"></span>
             <label>
                 <input type="radio" name="option" value="5" onChange={(ev) => {
                     setOption(parseInt(ev.currentTarget.value));
                 }} />
                 材料
             </label>
+            <span className="mr-1"></span>
             <label>
                 <input type="radio" name="option" value="6" onChange={(ev) => {
                     setOption(parseInt(ev.currentTarget.value));
                 }} />
                 作り方
+            </label>
+            <span className="mr-1"></span>
+            <label>
+                <input type="radio" name="option" value="7" onChange={(ev) => {
+                    setOption(parseInt(ev.currentTarget.value));
+                }} />
+                ユーザ
             </label>
         </>
     );

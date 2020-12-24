@@ -29,3 +29,4 @@ Route::get('/ryourikcal', [RyouriController::class, 'findKcal']);
 Route::get('/ryourijikan', [RyouriController::class, 'findJikan']);
 Route::get('/ryourizairyou', [RyouriController::class, 'findZairyou']);
 Route::get('/ryouritsukurikata', [RyouriController::class, 'findTsukurikata']);
+Route::get('/ryouriusername', [RyouriController::class, 'findUserName']);

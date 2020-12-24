@@ -1,7 +1,7 @@
 import React, {useState, createContext, useContext, useEffect} from 'react';
 import RyouriContext from './RyouriContext';
 
-const Ryouri = ({name, category, tags, kcal, jikan, zairyou, tsukurikata}) => {
+const Ryouri = ({name, category, tags, kcal, jikan, zairyou, tsukurikata, user}) => {
     const {setRyouris} = useContext(RyouriContext);
     const handleCategoryClick = (ev) => {
         ev.preventDefault();
@@ -23,6 +23,14 @@ const Ryouri = ({name, category, tags, kcal, jikan, zairyou, tsukurikata}) => {
         ev.preventDefault();
         (async () => {
             const resp = await fetch('/api/ryourizairyou?zairyou=' + ev.currentTarget.textContent);
+            const json = await resp.json();
+            setRyouris(json);
+        })();
+    };
+    const handleUsernameClick = (ev) => {
+        ev.preventDefault();
+        (async () => {
+            const resp = await fetch('/api/ryouriusername?username=' + ev.currentTarget.textContent);
             const json = await resp.json();
             setRyouris(json);
         })();
@@ -58,6 +66,9 @@ const Ryouri = ({name, category, tags, kcal, jikan, zairyou, tsukurikata}) => {
                         </>
                     );
                 })}</li>
+                <li className="list-group-item">
+                    ユーザ：<a href="#" onClick={handleUsernameClick}>{user}</a>
+                </li>
             </ul>
         </li>
     );
