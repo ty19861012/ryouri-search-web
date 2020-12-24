@@ -1,0 +1,40 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+h1 {
+    margin-bottom: 22px;
+}
+
+.appcontainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    column-gap: 44px;
+}
+
+label.registLbl {
+    width: 88px;
+    text-align: end;
+    vertical-align: top;
+}
+
+.btnContainer {
+    margin-left: 88px;
+}
+
+ul.yomi {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+}
+
+li.ryouriItem {
+    margin-bottom: 12px;
+}
