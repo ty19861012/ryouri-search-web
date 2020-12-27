@@ -40,14 +40,14 @@ const Ryouri = ({name, category, tags, kcal, jikan, zairyou, tsukurikata, user})
             <ul className="ryouri list-group list-group-flush">
                 <li className="list-group-item">料理名：{name}</li>
                 <li className="list-group-item">カテゴリー：<a href="#" onClick={handleCategoryClick}>{category}</a></li>
-                <li className="list-group-item">タグ：{tags.split(' ').map((tag, i) => {
+                <li className="list-group-item">タグ：{tags ? tags.split(' ').map((tag, i) => {
                     return (
                         <>
                             <a href="#" onClick={handleTagClick}>{tag}</a>
                             <span> </span>
                         </>
                     );
-                })}</li>
+                }):null}</li>
                 <li className="list-group-item">カロリー：{kcal}</li>
                 <li className="list-group-item">調理時間：{jikan}</li>
                 <li className="list-group-item">材料：{zairyou.split("\n").map((e) => {

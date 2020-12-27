@@ -27,6 +27,12 @@ class RyouriController extends Controller {
         return ['result' => 'ok'];
     }
 
+    public function remove(Request $req) {
+        $mdl = Ryouri::where('id', $req->input('id'))->first();
+        $mdl->delete();
+        return ['result' => 'ok'];
+    }
+
     public function getAll() {
         return Ryouri::with('user')->orderBy('id', 'desc')->get();
     }
